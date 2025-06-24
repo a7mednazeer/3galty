@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3galty | Contact</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/css/contact.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{% static '_3galty/img/Web Logo.png'%}"
+      type="image/x-icon"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="{% url 'home' %}"
+          ><img
+            class="NavLogo"
+            src="{% static '_3galty/img/Web Logo.png'%}"
+            alt="Bicycle Logo"
+            sizes=""
+            srcset=""
+        /></a>
+      </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Work</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div>
+      <img
+        src="{% static '_3galty/img/homelogo.png'%}"
+        alt="home"
+        class="home"
+      />
+      <div class="home-info">
+        <h5 style="margin-bottom: 0px">6 October City</h5>
+        <h5 style="margin-bottom: 0px">Giza</h5>
+        <h5>Egypt</h5>
+      </div>
+      <img
+        src="{% static '_3galty/img/phonelogo.png'%}"
+        alt="phone"
+        class="phone"
+      />
+      <h4 class="phone-info">+00 (0) 000 / 000 000 - 0</h4>
+      <img
+        src="{% static '_3galty/img/emaillogo.png'%}"
+        alt="email"
+        class="phone"
+      />
+      <h4 class="phone-info">support@3galty.com</h4>
+      <img
+        src="{% static '_3galty/img/earthlogo.png'%}"
+        alt="world"
+        class="phone"
+      />
+      <a href="home.html"><h4 class="phone-info">www.3galty.com</h4></a>
+    </div>
+    <div class="info_r">
+      <h1>Contact Us</h1>
+
+      <input type="text" placeholder="Name" class="text" />
+      <input type="email" placeholder="Email" class="email" />
+      <input type="text" placeholder="Message" class="message" />
+    </div>
+
+    <button type="submit" class="btn">Submit</button>
+    <div class="map-header">
+      <h1 style="font-size: 30px; margin-bottom: 20px">
+        The location of your listing
+      </h1>
+      <div class="map">
+        <div class="largemap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110608.61857149235!2d30.860241274576037!3d29.964501660644597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145855e126df199d%3A0x24a6cf9d2fda5678!2s6th%20of%20October%20City%2C%20Giza%20Governorate!5e0!3m2!1sen!2seg!4v1714003070955!5m2!1sen!2seg"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title=""
+          ></iframe>
+        </div>
+        <div class="minimap">
+          <img
+            src="{% static '_3galty/img/map.png'%}"
+            alt="mini map"
+            width="350px"
+            height="300px"
+          />
+        </div>
+      </div>
+      <div class="map-footer">
+        <p>
+          The exact meeting address is only shown to renters when you have
+          accepted their rental and they have confirmed and paid.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'AboutUs' %}">about us</a></li>
+              <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+              <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>our services</h4>
+            <ul>
+              <li><a href="{% url 'StartRide' %}">start ride</a></li>
+              <li><a href="{% url 'EndRide' %}">end ride</a></li>
+              <li>
+                <a href="{% url 'SearchByStations' %}">search by station</a>
+              </li>
+              <li><a href="{% url 'reviews' %}">reveiw</a></li>
+              <li><a href="{% url 'premium' %}">3galty +</a></li>
+              <li><a href="{% url 'checkout' %}">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="{% url 'fga' %}">FAQ</a></li>
+              <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+              <li><a href="{% url 'contact' %}">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Rating</h4>
+            <div class="ReveiwRate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-container">
+        <hr class="separator" />
+        <div>
+          <a href="{% url 'home' %}"
+            ><img
+              class="FooterLogo"
+              src="{% static '_3galty/img/Web Logo.png'%}"
+              alt="Bicycle Logo"
+              sizes=""
+              srcset=""
+          /></a>
+        </div>
+
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-telegram"></i></a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="Privacy_Terms" href="{% url 'TermsOfService' %}"
+            >Terms of Service</a
+          >
+          <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+
+      <p>
+        &copy;© 2024 All rights reserved by 3galty.com | Designed & Developed
+        made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a
+          class="TeamName"
+          href="https://github.com/a7mednazeer"
+          target="_blank"
+          >Ahmed Nazeer</a
+        >
+        &
+        <a class="TeamName" href="https://github.com/JANASAKR" target="_blank"
+          >Jana Sakr</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

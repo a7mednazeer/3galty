@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3galty | End a Ride</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/css/EndRide.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{% static '_3galty/img/Web Logo.png'%}"
+      type="image/x-icon"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      let seconds = 0;
+      let minutes = 0;
+      let hours = 0;
+      let days = 0;
+    
+      function updateTimer() {
+        seconds++;
+        if (seconds >= 60) {
+          seconds = 0;
+          minutes++;
+        }
+        if (minutes >= 60) {
+          minutes = 0;
+          hours++;
+        }
+        if (hours >= 24) {
+          hours = 0;
+          days++;
+        }
+    
+        // Format the time nicely
+        const formattedTime = `${String(days).padStart(2, '0')}:${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        document.getElementById('timer').innerText = formattedTime;
+      }
+    
+      setInterval(updateTimer, 1000); // Update every 1 second
+    </script>    
+
+    <style>
+      .alert {
+        padding: 10px;
+        margin: 10px;
+        width: 90%;
+        text-align: center;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      .alert-error {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+    </style>
+
+    <script>
+      setTimeout(function () {
+        const messages = document.querySelector(".messages");
+        if (messages) {
+          messages.style.display = "none";
+        }
+      }, 5000); // 5000 milliseconds = 5 seconds
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="{% url 'home' %}"
+          ><img
+            class="NavLogo"
+            src="{% static '_3galty/img/Web Logo.png'%}"
+            alt="Bicycle Logo"
+            sizes=""
+            srcset=""
+        /></a>
+      </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Work</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div style="margin-top: 10%; margin-left: 10%">
+      {% if messages %}
+      <div class="messages">
+        {% for message in messages %}
+        <div
+          class="alert 
+          {% if message.tags %}alert-{{ message.tags }}{% endif %}"
+        >
+          {{ message }}
+        </div>
+        {% endfor %}
+      </div>
+
+      <script>
+        setTimeout(function () {
+          const messages = document.querySelector(".messages");
+          if (messages) {
+            messages.style.display = "none";
+          }
+        }, 5000); // Hide messages after 5 seconds
+      </script>
+      {% endif %}
+
+      <h1 class="StartText">End a Ride</h1>
+      <p>
+        3glty lets you make a ride and choose your electrical or manual bike.
+      </p>
+    </div>
+    <div class="content">
+      <div class="info">
+        {% if ride %}
+          <h3>{{ ride.full_name }}</h3>
+          <h3>{{ ride.national_id }}</h3>
+          <h3>Trip ID: {{ ride.id }}</h3>
+        {% else %}
+          <h3>No active ride found!</h3>
+        {% endif %}
+      </div>
+      
+      <div>
+        <h1 class="time" id="timer">00:00:00</h1>
+      </div>
+      <div class="time-info">
+        <h5>Days</h5>
+        <h5>Hours</h5>
+        <h5>Minutes</h5>
+        <h5>Seconds</h5>
+      </div>
+    </div>
+    <div class="image">
+      <img src="{% static '_3galty/img/ride.jpg'%}" alt="" />
+    </div>
+    <div>
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn">End a Ride</button>
+      </form>      
+      <p style="margin: 2% 0 0 30%">
+        We look at every single ride after it's listed. Please allow a few
+        seconds for us to review your ride and end it.
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'AboutUs' %}">about us</a></li>
+              <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+              <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>our services</h4>
+            <ul>
+              <li><a href="{% url 'StartRide' %}">start ride</a></li>
+              <li><a href="{% url 'EndRide' %}">end ride</a></li>
+              <li>
+                <a href="{% url 'SearchByStations' %}">search by station</a>
+              </li>
+              <li><a href="{% url 'reviews' %}">reveiw</a></li>
+              <li><a href="{% url 'premium' %}">3galty +</a></li>
+              <li><a href="{% url 'checkout' %}">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="{% url 'fga' %}">FAQ</a></li>
+              <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+              <li><a href="{% url 'contact' %}">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Rating</h4>
+            <div class="ReveiwRate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-container">
+        <hr class="separator" />
+        <div>
+          <a href="{% url 'home' %}"
+            ><img
+              class="FooterLogo"
+              src="{% static '_3galty/img/Web Logo.png'%}"
+              alt="Bicycle Logo"
+              sizes=""
+              srcset=""
+          /></a>
+        </div>
+
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-telegram"></i></a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="Privacy_Terms" href="{% url 'TermsOfService' %}"
+            >Terms of Service</a
+          >
+          <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+
+      <p>
+        &copy;© 2024 All rights reserved by 3galty.com | Designed & Developed
+        made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a
+          class="TeamName"
+          href="https://github.com/a7mednazeer"
+          target="_blank"
+          >Ahmed Nazeer</a
+        >
+        &
+        <a class="TeamName" href="https://github.com/JANASAKR" target="_blank"
+          >Jana Sakr</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

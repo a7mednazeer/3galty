@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3galty | Home</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/css/home.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="icon" href="{% static '_3galty/img/Web Logo.png'%}" type="image/x-icon"/>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body>
+    <div class="col"></div>
+
+    <nav>
+      <div>
+        <a href="{% url 'home' %}"><img class="NavLogo" src="{% static '_3galty/img/Web Logo.png'%}" alt="Bicycle Logo" sizes="" srcset=""/></a>
+      </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Work</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="foo">
+      <h1 class="RentStatment">Rent a bike anywhere in the world</h1>
+      <h5 class="SaveStatment">Save money, meet awesome people, and consume less</h5>
+    </div>
+
+    <div class="boo">
+      <form action="{% url 'SearchByStations' %}" method="get">
+        <select name="station" class="search" id="station_select">
+          <option value="" disabled {% if not request.GET.station %}selected{% endif %}>
+            {% if selected_station %}
+              {{ selected_station.stationName }}
+            {% else %}
+              Choose Station
+            {% endif %}
+          </option>
+          
+          {% for s in stations %}
+            <option value="{{ s.id }}" {% if request.GET.station == s.id|stringformat:"s" %}selected{% endif %}>
+              {{ s.stationName }}
+            </option>
+          {% endfor %}
+        </select>
+      
+        <button class="BtnSearch" value="Search" type="submit">
+          Search
+        </button>
+      </form>
+    </div>
+
+    <div class="container">
+      <div class="manual">
+        <img src="{% static '_3galty/img/manual bike.png'%}" alt="Manual" width="100px" height="100px"/>
+      </div>
+
+      <div class="electrical">
+        <img src="{% static '_3galty/img/electrical bike.png'%}" alt="Electrical" width="100px" height="100px"/>
+      </div>
+    </div>
+
+    <div class="manualElectrical">
+      <h1 class="manualBike">Manual Bike</h1>
+      <h1 class="electricalBike">Electrical Bike</h1>
+    </div>
+
+    <div class="ShowNow">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+        nostrum illo possimus soluta deleniti quam, saepe voluptate tenetur quod
+        at autem, provident, rerum quaerat accusantium ad obcaecati aut
+        distinctio suscipit. Quas sunt perferendis alias excepturi hic numquam
+        maiores dolore vero, officiis commodi eligendi cupiditate ab iste fugit
+        voluptatem laboriosam in soluta enim voluptates adipisci. Dolores
+        placeat, tenetur architecto voluptates eum quas quaerat est aliquid
+        similique ullam omnis dignissimos ipsam facilis. Veritatis ex nulla,
+        error reiciendis mollitia, soluta itaque ut quisquam corrupti assumenda
+        molestiae blanditiis. Nihil iure soluta sapiente minima culpa facilis
+        reprehenderit magni non quos aspernatur, voluptatem amet enim error!
+      </p>
+      <a href="{% url 'AboutUs' %}">
+      <button class="BtnShowNow" value="Show Now" type="submit" name="Show Now">Show Now</button>
+      </a>
+    </div>
+
+    <div class="services">
+      <div class="FindRide">
+        <img src="{% static '_3galty/img/u9ntq0l2.png'%}" width="250px" height="100px" alt="" aline="center"/>
+        <h3>Find the perfect ride</h3>
+        <p>
+          Search through thousands of rides all over the world for one near you.
+          Search by city, ride type, available dates, and more.
+        </p>
+      </div>
+
+      <div class="BookRide">
+        <img src="{% static '_3galty/img/jjvaqkky.png'%}" width="250px" height="100px" alt=""/>
+        <h3>Book a ride & pay</h3>
+        <p>
+          Check the available dates and put in a request or two and message us.
+          Then book & pay through 3galty. It's cashless and convenient.
+        </p>
+      </div>
+
+      <div class="GetRide">
+        <img src="{% static '_3galty/img/50b9t0q3.png'%}" width="250px" height="100px" alt=""/>
+        <h3>Get the ride and have fun</h3>
+        <p>
+          Get your bike now and have a little fun and live the experience and do
+          your rides and all this for a very small amount.
+        </p>
+      </div>
+    </div>
+
+    <div class="StartEnd" style="margin-top: 100px;">
+      <a href="{% url 'StartRide' %}"style="text-decoration: none;" class="BtnStart">Start a Ride</a>
+      <a href="{% url 'EndRide' %}"  style="text-decoration: none;" class="BtnEnd">End a ride</a>
+    </div>
+
+    <div class="pro">
+      <div class="ProContent">
+        <h1>Introducing 3galty +</h1>
+        <h4>Rentals, reservations, and more right on your counter.</h4>
+
+        <div class="ImgPre">
+          <img src="{% static '_3galty/img/lightning-bolt.png'%}" width="50px" height="50px" alt=""/>
+          <pre>
+We worked closely with leading bike shops to design a system 
+that seamlessly manages the rental process from start
+to finish.
+            </pre>
+        </div>
+        <a href="{% url 'premium' %}" class="BtnLearnMore" value="Learn More" type="submit" style="text-decoration: none">Learn More</a>
+      </div>
+    </div>
+
+    <hr class="line" />
+
+    <div class="brands">
+      <h6>OUR TOP-BRANDS</h6>
+      <img src="{% static '_3galty/img/lghrgjjb.png'%}" width="125px" height="125px" alt=""/>
+      <img src="{% static '_3galty/img/xejxj8qp.png'%}" width="125px" height="125px" alt=""/>
+      <img src="{% static '_3galty/img/jxjvblxn.png'%}" width="125px" height="125px" alt=""/>
+      <img src="{% static '_3galty/img/yoshsowl.png'%}" width="125px" height="125px" alt=""/>
+      <img src="{% static '_3galty/img/4edq6ts2.png'%}" width="125px" height="125px" alt=""/>
+      <img src="{% static '_3galty/img/aepbhozm.png'%}" width="125px" height="125px" alt=""/>
+      <img src="{% static '_3galty/img/4grqnqwc.png'%}" width="125px" height="125px" alt=""/>
+      <img src="{% static '_3galty/img/xeomac6o.png'%}" width="125px" height="125px" alt=""/>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'AboutUs' %}">about us</a></li>
+              <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+              <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>our services</h4>
+            <ul>
+              <li><a href="{% url 'StartRide' %}">start ride</a></li>
+              <li><a href="{% url 'EndRide' %}">end ride</a></li>
+              <li>
+                <a href="{% url 'SearchByStations' %}">search by station</a>
+              </li>
+              <li><a href="{% url 'reviews' %}">reveiw</a></li>
+              <li><a href="{% url 'premium' %}">3galty +</a></li>
+              <li><a href="{% url 'checkout' %}">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="{% url 'fga' %}">FAQ</a></li>
+              <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+              <li><a href="{% url 'contact' %}">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Rating</h4>
+            <div class="ReveiwRate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-container">
+        <hr class="separator" />
+        <div>
+          <a href="{% url 'home' %}"
+            ><img
+              class="FooterLogo"
+              src="{% static '_3galty/img/Web Logo.png'%}"
+              alt="Bicycle Logo"
+              sizes=""
+              srcset=""
+          /></a>
+        </div>
+
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-telegram"></i></a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="Privacy_Terms" href="{% url 'TermsOfService' %}"
+            >Terms of Service</a
+          >
+          <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+
+      <p>
+        &copy;© 2024 All rights reserved by 3galty.com | Designed & Developed
+        made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a
+          class="TeamName"
+          href="https://github.com/a7mednazeer"
+          target="_blank"
+          >Ahmed Nazeer</a
+        >
+        &
+        <a class="TeamName" href="https://github.com/JANASAKR" target="_blank"
+          >Jana Sakr</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

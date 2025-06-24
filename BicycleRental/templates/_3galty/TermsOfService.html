@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3galty | Terms of Service</title>
+
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static '_3galty/css/TermsOfService.css'%}">
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{% static '_3galty/img/Web Logo.png'%}" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <nav>
+    <div>
+      <a href="{% url 'home' %}"><img class="NavLogo" src="{% static '_3galty/img/Web Logo.png'%}" alt="Bicycle Logo" sizes="" srcset=""></a>
+    </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Work</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>           
+      </div>
+  </nav>
+
+
+      <div class="hadear">
+        <h1>Terms Of Service</h1>
+        <h4>This Agreement was last revised on February 19, 2024.</h4>
+        <p>Welcome to 3galty, a peer-to-peer rental marketplace for outdoor sports equipment (the "Site") provided by 3galty, LLC ("3galty" "we," or "us"). These Terms of Service ("Terms") describe the terms and conditions that govern your use of and participation in 3galty services, including our Site, web widgets, feeds, mobile device software applications ("Apps"), applications for third-party web sites and services, in-store kiosks, and any other mobile or web services or applications offered by 3galty (collectively the "Service").</p>
+        <p>For the purposes of these Terms, "you" means each person using the Service. All visitors, users, and others who access the Site and/or Service, including you and any persons that you authorize to use your account, may be referred to in these Terms as the "User."</p>
+        <p>By accessing or using the Service, you agree to be bound by these terms, as amended from time to time. If you do not agree to these Terms, you are prohibited from using or accessing the Site or the Service. Please note that bike shops and certain other Listers (collectively, “Shops”) may have a separate written agreement with us; in the event of any conflict between these Terms and such agreement, the terms of the written agreement will control.</p>
+      </div>
+
+
+      
+
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+          </div>
+    
+          <div class="container">
+            <div class="row">
+              <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                  <li><a href="{% url 'AboutUs' %}">about us</a></li>
+                  <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+                  <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>our services</h4>
+                <ul>
+                  <li><a href="{% url 'StartRide' %}">start ride</a></li>
+                  <li><a href="{% url 'EndRide' %}">end ride</a></li>
+                  <li><a href="{% url 'SearchByStations' %}">search by station</a></li>
+                  <li><a href="{% url 'reviews' %}">reveiw</a></li>
+                  <li><a href="{% url 'premium' %}">3galty +</a></li>
+                  <li><a href="{% url 'checkout' %}">payment options</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                  <li><a href="{% url 'fga' %}">FAQ</a></li>
+                  <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+                  <li><a href="#">blog</a></li>
+                  <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+                  <li><a href="{% url 'contact' %}">contact us</a></li>
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Our Rating</h4>
+                <div class="ReveiwRate">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+    
+    
+    
+          <div class="social-container">
+            <hr class="separator">
+            <div>
+              <a href="{% url 'home' %}"><img class="FooterLogo" src="{% static '_3galty/img/Web Logo.png'%}" alt="Bicycle Logo" sizes="" srcset=""></a>
+            </div>
+            
+            <ul class="social-icons">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-github"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa fa-telegram"></i></a></li>
+            </ul>
+    
+            <div>
+              <a class="Privacy_Terms" href="{% url 'TermsOfService' %}">Terms of Service</a>
+              <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}">Privacy Policy</a>
+            </div>
+         </div>
+         
+          <p>&copy;© 2024 All rights reserved by 3galty.com | Designed & Developed made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a class="TeamName" href="https://github.com/a7mednazeer" target="_blank">Ahmed Nazeer</a> & <a class="TeamName" href="https://github.com/JANASAKR" target="_blank">Jana Sakr</a></p>
+        </footer>
+        
+        
+    
+    </body>
+    </html>
+    

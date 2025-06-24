@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3galty | Reviews</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/css/reviews.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{% static '_3galty/img/Web Logo.png'%}"
+      type="image/x-icon"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="{% url 'home' %}"
+          ><img
+            class="NavLogo"
+            src="{% static '_3galty/img/Web Logo.png'%}"
+            alt="Bicycle Logo"
+            sizes=""
+            srcset=""
+        /></a>
+      </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Work</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="review">
+      <img
+        class="ReviewLogo"
+        src="{% static '_3galty/img/Web Logo.png'%}"
+        alt=""
+        width="150px"
+        height="75px"
+      />
+      <img
+        class="star"
+        src="{% static '_3galty/img/star.png'%}"
+        alt=""
+        width="40px"
+      />
+      <h1 class="head">3galty</h1>
+      <p class="paragraph">Reviews 000,000 • Excellent</p>
+
+      <div class="rating">
+        <div class="rate">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+        <div class="rate">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+        <div class="rate">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+        <div class="rate">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+        <div class="rate">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+      </div>
+
+      <div class="valid">
+        <img
+          src="{% static '_3galty/img/validation-logo.png'%}"
+          alt=""
+          width="12px"
+        />
+        <h6>VERIFIED COMPANY</h6>
+      </div>
+
+      <a href="{% url 'home' %}" class="home">
+        <div class="recommendation">
+          <h4>3galty.com</h4>
+          <h6>Visit Website</h6>
+          <img
+            src="{% static '_3galty/img/arrow.png'%}"
+            alt=""
+            width="40px"
+            height="30px"
+          />
+        </div>
+      </a>
+    </div>
+
+    <div class="MakeReviews">
+      <img
+        src="{% static '_3galty/img/user.png'%}"
+        alt=""
+        width="100px"
+        height="100px"
+      />
+      <input type="text" placeholder="Write a Review" />
+
+      <div class="choose">
+        <div class="choice">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+        <div class="choice">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+        <div class="choice">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+        <div class="choice">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+        <div class="choice">
+          <img
+            src="{% static '_3galty/img/star-black.png'%}"
+            alt=""
+            width="40px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1>About 3galty</h1>
+      <h6>Information written by the company</h6>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+        dictum nulla. Maecenas pulvinar euismod purus, et tincidunt est
+        venenatis ac. Vivamus eget justo non lorem cursus venenatis. Vestibulum
+        nec bibendum mi. Praesent aliquam ipsum in diam faucibus, in pulvinar
+        nisi consequat. Nam nec elit vulputate, tempus purus eu, vestibulum mi.
+      </p>
+
+      <hr />
+
+      <h1>Contact</h1>
+
+      <div class="ContactInfo">
+        <div class="mail">
+          <img
+            src="{% static '_3galty/img/mail logo.png'%}"
+            alt=""
+            width="40px"
+            height="40px"
+          />
+          <h3>Reviews@3galty.com</h3>
+        </div>
+        <div class="phone">
+          <img
+            src="{% static '_3galty/img/phonelogo.png'%}"
+            alt=""
+            width="30px"
+            height="35px"
+          />
+          <h3>+00 (0) 000 / 000 000 - 0</h3>
+        </div>
+        <div class="address">
+          <img
+            src="{% static '_3galty/img/location ligo.png'%}"
+            alt=""
+            width="60px"
+            height="50px"
+          />
+          <div>
+            <h6>6 October City</h6>
+            <h6>Giza</h6>
+            <h6>Egypt</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ShowReview">
+      <img
+        src="{% static '_3galty/img/Screenshot.png'%}"
+        alt=""
+        width="100%"
+        height="100%"
+      />
+    </div>
+
+    <div class="review1"></div>
+    <div class="review2"></div>
+    <div class="review3"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'AboutUs' %}">about us</a></li>
+              <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+              <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>our services</h4>
+            <ul>
+              <li><a href="{% url 'StartRide' %}">start ride</a></li>
+              <li><a href="{% url 'EndRide' %}">end ride</a></li>
+              <li>
+                <a href="{% url 'SearchByStations' %}">search by station</a>
+              </li>
+              <li><a href="{% url 'reviews' %}">reveiw</a></li>
+              <li><a href="{% url 'premium' %}">3galty +</a></li>
+              <li><a href="{% url 'checkout' %}">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="{% url 'fga' %}">FAQ</a></li>
+              <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+              <li><a href="{% url 'contact' %}">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Rating</h4>
+            <div class="ReveiwRate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-container">
+        <hr class="separator" />
+        <div>
+          <a href="{% url 'home' %}"
+            ><img
+              class="FooterLogo"
+              src="{% static '_3galty/img/Web Logo.png'%}"
+              alt="Bicycle Logo"
+              sizes=""
+              srcset=""
+          /></a>
+        </div>
+
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-telegram"></i></a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="Privacy_Terms" href="{% url 'TermsOfService' %}"
+            >Terms of Service</a
+          >
+          <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+
+      <p>
+        &copy;© 2024 All rights reserved by 3galty.com | Designed & Developed
+        made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a
+          class="TeamName"
+          href="https://github.com/a7mednazeer"
+          target="_blank"
+          >Ahmed Nazeer</a
+        >
+        &
+        <a class="TeamName" href="https://github.com/JANASAKR" target="_blank"
+          >Jana Sakr</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

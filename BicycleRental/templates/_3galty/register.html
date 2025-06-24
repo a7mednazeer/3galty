@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3galty | Register</title>
+
+  {% load static %}
+    
+  <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{% static '_3galty/css/register.css'%}">
+  <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="{% static '_3galty/img/Web Logo.png'%}" type="image/x-icon">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div>
+      <a href="{% url 'home' %}"><img class="NavLogo" src="{% static '_3galty/img/Web Logo.png'%}" alt="Bicycle Logo" sizes="" srcset=""></a>
+    </div>
+  </nav>
+
+
+
+  <div class="imageBaground">
+    <img class="image" src="{% static '_3galty/img/free-photo-of-bicycles.jpeg.jpg'%}" width="450px" height="600px" alt="">
+  </div>
+
+  <div class="formContainer">
+    <h1>Register</h1>
+    <div class="container">
+      <form method="POST">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Your First Nmae.." pattern="[A-Za-z]+" required><br><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Your Last Name.." pattern="[A-Za-z]+" required><br><br>
+
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" placeholder="Your Phone.." required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email.." required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Your Password.." pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required><br><br>
+
+        <input type="submit" value="Register">
+        
+        <p>I've already an account. <a href="{% url 'login' %}">Login here.</a></p>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

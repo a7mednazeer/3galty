@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3galty | Start a Ride</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/css/StartRide.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{% static '_3galty/img/Web Logo.png'%}"
+      type="image/x-icon"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <style>
+      .alert {
+        padding: 10px;
+        margin: 10px;
+        margin-top: 100px;
+        width: 90%;
+        text-align: center;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      
+      .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+      }
+      
+      .alert-error {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+      </style>
+
+    <script>
+      // Pass all stations data to JavaScript
+      const stations = {
+        {% for station in stations %}
+          "{{ station.id }}": {
+            "eNum": {{ station.eNum }},
+            "mNum": {{ station.mNum }}
+          },
+        {% endfor %}
+      };
+    </script>
+
+    <script>
+      setTimeout(function() {
+        const messages = document.querySelector('.messages');
+        if (messages) {
+          messages.style.display = 'none';
+        }
+      }, 5000); // 5000 milliseconds = 5 seconds
+    </script>
+    
+    
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="{% url 'home' %}"
+          ><img
+            class="NavLogo"
+            src="{% static '_3galty/img/Web Logo.png'%}"
+            alt="Bicycle Logo"
+            sizes=""
+            srcset=""
+        /></a>
+      </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Work</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
+    
+    <div class="words">
+      {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+{% endif %}
+
+
+      <h1>Start a ride</h1>
+      <h2>
+        3glty lets you make a ride and choose your electrical or manual bike.
+      </h2>
+    </div>
+    <div class="info">
+      <form class="form" method="post" action="{% url 'StartRide' %}">
+        {% csrf_token %}
+        <h2>Full Name:</h2>
+        <input type="text" placeholder="Enter your name" name="full_name" />
+        
+        <div>
+        <h2 class="id1">National ID:</h2>
+        <input
+          type="text"
+          placeholder="Enter your National ID"
+          class="id2"
+          name="national_id"
+        />
+        </div>
+        
+        <img src="{% static '_3galty/img/ride.jpg'%}" alt="" class="photo" />
+        <h2 class="s_station">Start station:</h2>
+
+        <select name="start_station" class="s_station1">
+          <option selected disabled>Choose start station</option>
+          {% for station in stations %}
+          <option value="{{ station.id }}">{{ station.stationName }}</option>
+          {% endfor %}
+        </select>
+
+        <h2 class="s_station2">End station:</h2>
+        <select name="end_station" class="s_station3">
+          <option selected disabled>Choose end station</option>
+          {% for station in stations %}
+          <option value="{{ station.id }}">{{ station.stationName }}</option>
+          {% endfor %}
+        </select>
+
+        <h2 class="t_bicycle">Type of bicycle:</h2>
+<div class="images_type" id="bike_types_area">
+  <!-- Bike types will appear here based on selected station -->
+  <script>
+    const startStationSelect = document.querySelector('.s_station1'); // Start station dropdown
+    const bikeTypesArea = document.getElementById('bike_types_area'); // Bike types div
+  
+    startStationSelect.addEventListener('change', function() {
+      const selectedStationId = this.value;
+      const stationData = stations[selectedStationId];
+  
+      // Clear previous bike type options
+      bikeTypesArea.innerHTML = '';
+  
+      if (stationData) {
+        if (stationData.eNum > 0) {
+          bikeTypesArea.innerHTML += `
+            <div>
+              <input type="radio" name="bike_type" value="electrical" id="electrical_radio"
+                style="height: 130px; width: 130px; margin-right: 80px" />
+              <img class="images_type1" src="{% static '_3galty/img/electrical bike.png'%}" alt="electrical bike"
+                style="width: 100px; height: 100px" />
+            </div>
+          `;
+        }
+        if (stationData.mNum > 0) {
+          bikeTypesArea.innerHTML += `
+            <div>
+              <input type="radio" name="bike_type" value="manual" id="manual_radio"
+                style="height: 130px; width: 130px" />
+              <img class="images_type2" src="{% static '_3galty/img/manual bike.png'%}" alt="manual bike"
+                style="width: 100px; height: 100px" />
+            </div>
+          `;
+        }
+      }
+    });
+  </script>  
+</div>
+
+
+        </div>
+        <div class="booking">
+          <h3 style="font-weight: bold">Price Suggestions</h3>
+          <h3 style="font-weight: bold">choose your rental prices.</h3>
+        </div>
+        <div class="type">
+          <div class="type1" style="margin-left: -5%">
+            <h3 style="font-weight: bold">Electrical Bike</h3>
+            <ul>
+              <li style="">$8/hour</li>
+              <li style="">$50/day</li>
+              <li style="">$300/week</li>
+            </ul>
+          </div>
+          <div class="type1" style="margin-left: -10%">
+            <h3 style="font-weight: bold">Manual Bike</h3>
+            <ul>
+              <li>$4/hour</li>
+              <li>$20/day</li>
+              <li>$100/week</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <h1 style="margin: 5% 0 2% 10%">The location of your listing</h1>
+    <div class="map">
+      <div class="largemap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110608.61857149235!2d30.860241274576037!3d29.964501660644597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145855e126df199d%3A0x24a6cf9d2fda5678!2s6th%20of%20October%20City%2C%20Giza%20Governorate!5e0!3m2!1sen!2seg!4v1714003070955!5m2!1sen!2seg"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title=""
+        ></iframe>
+      </div>
+      <div class="minimap">
+        <img
+          src="{% static '_3galty/img/map.png'%}"
+          alt="mini map"
+          width="350px"
+          height="300px"
+        />
+      </div>
+    </div>
+
+    <p style="margin-top: 10%; margin-left: 10%">
+      The exact meeting address is only shown to renters when you have accepted
+      their rental and they have confirmed and paid.
+    </p>
+    <div class="btnn">
+      <button type="submit" class="btnn1">Start a Ride</button>
+      <a href="{% url 'home' %}" ><button type="button" class="btnn2">Cancel</button></a>
+    </div>
+    <p style="margin-left: 29%; margin-bottom: 10%">
+      We look at every single ride after it's listed. Please allow a few seconds
+      for us to review your ride and approve it.
+    </p>
+  </form>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'AboutUs' %}">about us</a></li>
+              <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+              <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>our services</h4>
+            <ul>
+              <li><a href="{% url 'StartRide' %}">start ride</a></li>
+              <li><a href="{% url 'EndRide' %}">end ride</a></li>
+              <li>
+                <a href="{% url 'SearchByStations' %}">search by station</a>
+              </li>
+              <li><a href="{% url 'reviews' %}">reveiw</a></li>
+              <li><a href="{% url 'premium' %}">3galty +</a></li>
+              <li><a href="{% url 'checkout' %}">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="{% url 'fga' %}">FAQ</a></li>
+              <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+              <li><a href="{% url 'contact' %}">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Rating</h4>
+            <div class="ReveiwRate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-container">
+        <hr class="separator" />
+        <div>
+          <a href="{% url 'home' %}"
+            ><img
+              class="FooterLogo"
+              src="{% static '_3galty/img/Web Logo.png'%}"
+              alt="Bicycle Logo"
+              sizes=""
+              srcset=""
+          /></a>
+        </div>
+
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-telegram"></i></a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="Privacy_Terms" href="{% url 'TermsOfService' %}"
+            >Terms of Service</a
+          >
+          <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+
+      <p>
+        &copy;© 2024 All rights reserved by 3galty.com | Designed & Developed
+        made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a
+          class="TeamName"
+          href="https://github.com/a7mednazeer"
+          target="_blank"
+          >Ahmed Nazeer</a
+        >
+        &
+        <a class="TeamName" href="https://github.com/JANASAKR" target="_blank"
+          >Jana Sakr</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

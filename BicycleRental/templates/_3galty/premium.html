@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3galty | 3galt+</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/css/premium.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{% static '_3galty/img/Web Logo.png'%}"
+      type="image/x-icon"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="{% url 'home' %}"
+          ><img
+            class="NavLogo"
+            src="{% static '_3galty/img/Web Logo.png'%}"
+            alt="Bicycle Logo"
+            sizes=""
+            srcset=""
+        /></a>
+      </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Work</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="privacy">
+      <div>
+        <img
+          class="light"
+          src="{% static '_3galty/img/lightlogo.png'%}"
+          alt=""
+          width="60px"
+          height=""
+        />
+        <h3>Streamline rental process</h3>
+        <p>
+          We worked closely with leading bike shops to design a system that
+          seamlessly manages the rental process from start to finish.
+        </p>
+      </div>
+      <div>
+        <img
+          class="protect"
+          src="{% static '_3galty/img/protect-logo.png'%}"
+          alt=""
+          width="60px"
+          height=""
+        />
+        <h3>Protect inventory</h3>
+        <p>
+          Built in protection plans ensure our bikes are covered while inventory
+          management keeps us updated on their status.
+        </p>
+      </div>
+      <div>
+        <img
+          class="heart"
+          src="{% static '_3galty/img/heartlogo.png'%}"
+          alt=""
+          width="60px"
+          height=""
+        />
+        <h3>Delight your customers</h3>
+        <p>
+          Our employees magically handles contracts, payments, and protection
+          without paperwork or hassle.
+        </p>
+      </div>
+    </div>
+
+    <hr class="seprator" />
+
+    <div class="content">
+      <h1>3galty +</h1>
+      <p>
+        Looking for more components and customizations? Check out our premium
+        version.
+      </p>
+    </div>
+
+    <div class="features">
+      <div class="vl1"></div>
+      <div class="vl2"></div>
+
+      <hr class="feat-separator1" />
+      <hr class="feat-separator2" />
+      <hr class="feat-separator3" />
+      <hr class="feat-separator4" />
+      <hr class="feat-separator5" />
+      <hr class="feat-separator6" />
+      <hr class="feat-separator7" />
+
+      <div class="hedear">
+        <h2>Basic</h2>
+        <h2>Pro</h2>
+      </div>
+
+      <div class="body">
+        <h6>Customer Facing Kiosk</h6>
+        <h6>Accepts All Major Credit Cards</h6>
+        <h6>Promo Codes ( 50% )</h6>
+        <h6>Email Receipts</h6>
+        <h6>Sales Reporting</h6>
+        <h6>Reach 3galty Users in 100+ Countries</h6>
+      </div>
+
+      <div class="false">
+        <img
+          class="false-img1"
+          src="{% static '_3galty/img/false-logo.png'%}"
+          alt=""
+          width="50px"
+        />
+        <img
+          class="false-img2"
+          src="{% static '_3galty/img/false-logo.png'%}"
+          alt=""
+          width="50px"
+        />
+        <img
+          class="false-img3"
+          src="{% static '_3galty/img/false-logo.png'%}"
+          alt=""
+          width="50px"
+        />
+        <img
+          class="false-img4"
+          src="{% static '_3galty/img/false-logo.png'%}"
+          alt=""
+          width="50px"
+        />
+        <img
+          class="false-img5"
+          src="{% static '_3galty/img/false-logo.png'%}"
+          alt=""
+          width="50px"
+        />
+        <img
+          class="false-img6"
+          src="{% static '_3galty/img/false-logo.png'%}"
+          alt=""
+          width="50px"
+        />
+      </div>
+
+      <div class="true">
+        <img
+          class="true-img1"
+          src="{% static '_3galty/img/truelogo.png'%}"
+          alt=""
+          width="30px"
+        />
+        <img
+          class="true-img2"
+          src="{% static '_3galty/img/truelogo.png'%}"
+          alt=""
+          width="30px"
+        />
+        <img
+          class="true-img3"
+          src="{% static '_3galty/img/truelogo.png'%}"
+          alt=""
+          width="30px"
+        />
+        <img
+          class="true-img4"
+          src="{% static '_3galty/img/truelogo.png'%}"
+          alt=""
+          width="30px"
+        />
+        <img
+          class="true-img5"
+          src="{% static '_3galty/img/truelogo.png'%}"
+          alt=""
+          width="30px"
+        />
+        <img
+          class="true-img6"
+          src="{% static '_3galty/img/truelogo.png'%}"
+          alt=""
+          width="30px"
+        />
+      </div>
+
+      <div class="fot">
+        <h2>Free</h2>
+        <h5>Starting from $59</h5>
+      </div>
+
+      <button class="upgrade" type="submit">Upgrade to Pro</button>
+    </div>
+
+    <hr class="seprator" />
+
+    <div class="brands">
+      <h6>OUR TOP-BRANDS</h6>
+      <img
+        src="{% static '_3galty/img/lghrgjjb.png'%}"
+        width="125px"
+        height="125px"
+        alt=""
+      />
+      <img
+        src="{% static '_3galty/img/xejxj8qp.png'%}"
+        width="125px"
+        height="125px"
+        alt=""
+      />
+      <img
+        src="{% static '_3galty/img/jxjvblxn.png'%}"
+        width="125px"
+        height="125px"
+        alt=""
+      />
+      <img
+        src="{% static '_3galty/img/yoshsowl.png'%}"
+        width="125px"
+        height="125px"
+        alt=""
+      />
+      <img
+        src="{% static '_3galty/img/4edq6ts2.png'%}"
+        width="125px"
+        height="125px"
+        alt=""
+      />
+      <img
+        src="{% static '_3galty/img/aepbhozm.png'%}"
+        width="125px"
+        height="125px"
+        alt=""
+      />
+      <img
+        src="{% static '_3galty/img/4grqnqwc.png'%}"
+        width="125px"
+        height="125px"
+        alt=""
+      />
+      <img
+        src="{% static '_3galty/img/xeomac6o.png'%}"
+        width="125px"
+        height="125px"
+        alt=""
+      />
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'AboutUs' %}">about us</a></li>
+              <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+              <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>our services</h4>
+            <ul>
+              <li><a href="{% url 'StartRide' %}">start ride</a></li>
+              <li><a href="{% url 'EndRide' %}">end ride</a></li>
+              <li>
+                <a href="{% url 'SearchByStations' %}">search by station</a>
+              </li>
+              <li><a href="{% url 'reviews' %}">reveiw</a></li>
+              <li><a href="{% url 'premium' %}">3galty +</a></li>
+              <li><a href="{% url 'checkout' %}">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="{% url 'fga' %}">FAQ</a></li>
+              <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+              <li><a href="{% url 'contact' %}">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Rating</h4>
+            <div class="ReveiwRate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-container">
+        <hr class="separator" />
+        <div>
+          <a href="{% url 'home' %}"
+            ><img
+              class="FooterLogo"
+              src="{% static '_3galty/img/Web Logo.png'%}"
+              alt="Bicycle Logo"
+              sizes=""
+              srcset=""
+          /></a>
+        </div>
+
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-telegram"></i></a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="Privacy_Terms" href="{% url 'TermsOfService' %}"
+            >Terms of Service</a
+          >
+          <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+
+      <p>
+        &copy;© 2024 All rights reserved by 3galty.com | Designed & Developed
+        made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a
+          class="TeamName"
+          href="https://github.com/a7mednazeer"
+          target="_blank"
+          >Ahmed Nazeer</a
+        >
+        &
+        <a class="TeamName" href="https://github.com/JANASAKR" target="_blank"
+          >Jana Sakr</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

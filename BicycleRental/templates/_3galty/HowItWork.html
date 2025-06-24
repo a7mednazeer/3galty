@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3galty | How it works</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/css/HowItWork.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{% static '_3galty/img/Web Logo.png'%}"
+      type="image/x-icon"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="{% url 'home' %}"
+          ><img
+            class="NavLogo"
+            src="{% static '_3galty/img/Web Logo.png'%}"
+            alt="Bicycle Logo"
+            sizes=""
+            srcset=""
+        /></a>
+      </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Works</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="photo">
+      <img
+        src="{% static '_3galty/img/Thistle-E-Bikes-Mountain-Sunrise-Road-Scotland.webp'%}"
+        alt="Bicycle"
+      />
+    </div>
+
+    <div class="info-photo">
+      <h1>How it Works</h1>
+      <h5>Save money, meet awesome people, and consume less</h5>
+    </div>
+
+    <div class="info">
+      <h5>
+        3galty is a premier bike rental service that provides a platform to
+        connect with active people looking to rent or borrow in Egypt. Through
+        our service, renters search for a bike in whatever area they want and
+        complete the rental process easily through our website. We even offer
+        various protection options and delivery services to make everyone happy.
+      </h5>
+    </div>
+
+    <div class="bicycle-photo">
+      <div>
+        <img
+          src="{% static '_3galty/img/u9ntq0l2.png'%}"
+          alt=""
+          style="margin-top: 25px; margin-left: 50px"
+        />
+        <h2 style="color: white; margin-left: 35px; margin-top: 25px">
+          Find the perfect ride
+        </h2>
+        <p style="color: white; margin: 0px 35px">
+          Search through thousands of rides all over the world for one near you.
+          Search by city, ride type, available dates, and more.
+        </p>
+      </div>
+      <div>
+        <img
+          src="{% static '_3galty/img/jjvaqkky.png'%}"
+          alt=""
+          style="margin-top: 25px; margin-left: 70px"
+        />
+        <h2 style="color: white; margin-left: 35px; margin-top: 25px">
+          Book a ride & pay
+        </h2>
+        <p style="color: white; margin: 0px 35px">
+          Check the available dates and put in a request or two and message us.
+          Then book & pay through 3galty. It’s cashless and convenient.
+        </p>
+      </div>
+      <div>
+        <img
+          src="{% static '_3galty/img/50b9t0q3.png'%}"
+          alt=""
+          style="margin-top: 25px; margin-left: 50px"
+        />
+        <h2 style="color: white; margin-left: 35px; margin-top: 25px">
+          Get the ride and have fun
+        </h2>
+        <p style="color: white; margin: 0px 35px">
+          Get your bike now and have a little fun and live the experience and do
+          your rides and all this for a very small amount.
+        </p>
+      </div>
+    </div>
+    <button type="submit" class="start-ride">Start a Ride</button>
+    <div class="video">
+      <h2 style="text-decoration: underline">Watch The Video</h2>
+      <div></div>
+    </div>
+    <div class="protection">
+      <h2>Protection and Trust</h2>
+      <p style="margin-top: -20px">List your ride with confidence</p>
+      <p>
+        Listers in select countries are covered by the 3galty Guarantee which
+        provides up to $1,000 of damage and theft protection on their rides.
+      </p>
+      <h2>Get extra coverage when you rent.</h2>
+      <p>
+        Renters can purchase protection from 3galty to cover damage and or theft
+        during their renta
+      </p>
+    </div>
+    <div class="shield">
+      <img src="{% static '_3galty/img/shield.png'%}" alt="" />
+      <h2>Damage Protection</h2>
+      <p>
+        When purchasing damage protection, renters are covered for damage up to
+        $1,000. This does not cover rides locked up outside overnight between
+        10PM and 6AM. Read More
+      </p>
+      <img
+        src="{% static '_3galty/img/hacker.png'%}"
+        alt=""
+        style="width: 150px; height: 120px; margin-left: -4%"
+      />
+      <h2>Theft Protection</h2>
+      <p>
+        When purchasing theft protection, renters are covered for theft up to
+        $1,000. This does not cover rides locked up outside overnight between
+        10PM and 6AM. Read More
+      </p>
+    </div>
+    <h1 class="end-info">How We Built Trust</h1>
+    <div class="trust">
+      <div>
+        <img src="{% static '_3galty/img/validation-logo.png'%}" alt="" />
+        <h2>ID Verification</h2>
+        <p>
+          Renters and listers verify their 3galty accounts with their Credit
+          Card, mobile phone number, Twitter and Facebook. The verification
+          validates your online identity to help us get a better idea of who is
+          rent. Verifying your account helps others trust you and makes your
+          ride show up higher in search results.
+        </p>
+      </div>
+      <div>
+        <img src="{% static '_3galty/img/star-logo.png'%}" alt="" />
+        <h2>Community Reviews</h2>
+        <p>
+          We welcome all of our users to review each other following their
+          rental to provide a resource that highlights everyone’s experiences on
+          3galty. These reviews help create a sense of community for our users
+          and build a marketplace based on safety and trust.
+        </p>
+      </div>
+      <div>
+        <img src="{% static '_3galty/img/lock-logo.png'%}" alt="" />
+        <h2>Keep Your Privacy</h2>
+        <p>
+          We never share your information with anyone until you confirm their
+          rental. You can keep all communications in our secure, private
+          messaging system so you don't need to share your contact info.
+        </p>
+      </div>
+    </div>
+
+    <hr />
+    <button
+      type="submit"
+      style="background-color: black; border: 2px solid #000000"
+    >
+      Terms of Service
+    </button>
+    <button
+      type="submit"
+      style="background-color: #008000; border: 2px solid #008000"
+    >
+      Privacy Policy
+    </button>
+    <hr />
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'AboutUs' %}">about us</a></li>
+              <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+              <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>our services</h4>
+            <ul>
+              <li><a href="{% url 'StartRide' %}">start ride</a></li>
+              <li><a href="{% url 'EndRide' %}">end ride</a></li>
+              <li>
+                <a href="{% url 'SearchByStations' %}">search by station</a>
+              </li>
+              <li><a href="{% url 'reviews' %}">reveiw</a></li>
+              <li><a href="{% url 'premium' %}">3galty +</a></li>
+              <li><a href="{% url 'checkout' %}">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="{% url 'fga' %}">FAQ</a></li>
+              <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+              <li><a href="{% url 'contact' %}">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Rating</h4>
+            <div class="ReveiwRate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-container">
+        <hr class="separator" />
+        <div>
+          <a href="{% url 'home' %}"
+            ><img
+              class="FooterLogo"
+              src="{% static '_3galty/img/Web Logo.png'%}"
+              alt="Bicycle Logo"
+              sizes=""
+              srcset=""
+          /></a>
+        </div>
+
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-telegram"></i></a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="Privacy_Terms" href="{% url 'TermsOfService' %}"
+            >Terms of Service</a
+          >
+          <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+
+      <p>
+        &copy;© 2024 All rights reserved by 3galty.com | Designed & Developed
+        made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a
+          class="TeamName"
+          href="https://github.com/a7mednazeer"
+          target="_blank"
+          >Ahmed Nazeer</a
+        >
+        &
+        <a class="TeamName" href="https://github.com/JANASAKR" target="_blank"
+          >Jana Sakr</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

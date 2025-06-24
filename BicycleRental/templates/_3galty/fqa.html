@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3galty | FQA</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/css/fqa.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{% static '_3galty/img/Web Logo.png'%}"
+      type="image/x-icon"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="{% url 'home' %}"
+          ><img
+            class="NavLogo"
+            src="{% static '_3galty/img/Web Logo.png'%}"
+            alt="Bicycle Logo"
+            sizes=""
+            srcset=""
+        /></a>
+      </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Work</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <img src="{% static '_3galty/img/23984.jpg'%}" class="photo" alt="" />
+    <div class="fqa">
+      <h1>FQA</h1>
+    </div>
+    <div class="contnet">
+      <div>
+        <input type="radio" name="fqa" />
+        <label>Can I reset my password?</label>
+        <section class="c1">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            tempora perferendis vitae, sapiente eos facilis amet voluptatum,
+            itaque, consequatur maxime labore alias deserunt quaerat cumque
+            accusamus cum excepturi voluptates. Culpa.
+          </p>
+        </section>
+      </div>
+      <div>
+        <input type="radio" name="fqa" />
+        <label>Can I reset my password?</label>
+        <section class="c2">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            tempora perferendis vitae, sapiente eos facilis amet voluptatum,
+            itaque, consequatur maxime labore alias deserunt quaerat cumque
+            accusamus cum excepturi voluptates. Culpa.
+          </p>
+        </section>
+      </div>
+      <div>
+        <input type="radio" name="fqa" />
+        <label>Can I reset my password?</label>
+        <section class="c3">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            tempora perferendis vitae, sapiente eos facilis amet voluptatum,
+            itaque, consequatur maxime labore alias deserunt quaerat cumque
+            accusamus cum excepturi voluptates. Culpa.
+          </p>
+        </section>
+      </div>
+      <div>
+        <input type="radio" name="fqa" />
+        <label>Can I reset my password?</label>
+        <section class="c4">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            tempora perferendis vitae, sapiente eos facilis amet voluptatum,
+            itaque, consequatur maxime labore alias deserunt quaerat cumque
+            accusamus cum excepturi voluptates. Culpa.
+          </p>
+        </section>
+      </div>
+      <div>
+        <input type="radio" name="fqa" />
+        <label>Can I reset my password?</label>
+        <section class="c5">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            tempora perferendis vitae, sapiente eos facilis amet voluptatum,
+            itaque, consequatur maxime labore alias deserunt quaerat cumque
+            accusamus cum excepturi voluptates. Culpa.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'AboutUs' %}">about us</a></li>
+              <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+              <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>our services</h4>
+            <ul>
+              <li><a href="{% url 'StartRide' %}">start ride</a></li>
+              <li><a href="{% url 'EndRide' %}">end ride</a></li>
+              <li>
+                <a href="{% url 'SearchByStations' %}">search by station</a>
+              </li>
+              <li><a href="{% url 'reviews' %}">reveiw</a></li>
+              <li><a href="{% url 'premium' %}">3galty +</a></li>
+              <li><a href="{% url 'checkout' %}">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="{% url 'fga' %}">FAQ</a></li>
+              <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+              <li><a href="{% url 'contact' %}">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Rating</h4>
+            <div class="ReveiwRate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-container">
+        <hr class="separator" />
+        <div>
+          <a href="{% url 'home' %}"
+            ><img
+              class="FooterLogo"
+              src="{% static '_3galty/img/Web Logo.png'%}"
+              alt="Bicycle Logo"
+              sizes=""
+              srcset=""
+          /></a>
+        </div>
+
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-telegram"></i></a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="Privacy_Terms" href="{% url 'TermsOfService' %}"
+            >Terms of Service</a
+          >
+          <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+
+      <p>
+        &copy;© 2024 All rights reserved by 3galty.com | Designed & Developed
+        made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a
+          class="TeamName"
+          href="https://github.com/a7mednazeer"
+          target="_blank"
+          >Ahmed Nazeer</a
+        >
+        &
+        <a class="TeamName" href="https://github.com/JANASAKR" target="_blank"
+          >Jana Sakr</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

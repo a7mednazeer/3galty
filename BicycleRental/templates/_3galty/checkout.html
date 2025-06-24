@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3galty | Checkout</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static '_3galty/css/bootstrap.min.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/css/checkout.css'%}" />
+    <link rel="stylesheet" href="{% static '_3galty/font/all.css'%}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="{% static '_3galty/img/Web Logo.png'%}"
+      type="image/x-icon"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <a href="{% url 'home' %}"
+          ><img
+            class="NavLogo"
+            src="{% static '_3galty/img/Web Logo.png'%}"
+            alt="Bicycle Logo"
+            sizes=""
+            srcset=""
+        /></a>
+      </div>
+
+      <div>
+        <ul>
+          <li><a href="{% url 'HowItWork' %}">How it Work</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Log in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="info">
+      {% if checkout_data %}
+      <h3>Name: {{ checkout_data.full_name | default:""}}</h3>
+      <h3>National ID: {{ checkout_data.national_id | default:""}}</h3>
+      <h3>Trip Number: {{ checkout_data.trip_number | default:""}}</h3>
+      <h3>Start Time: {{ checkout_data.start_time }}</h3>
+    <h3>End Time: {{ checkout_data.end_time }}</h3>
+  {% endif %}
+</div>
+
+<form method="post">
+  {% csrf_token %}
+  <div class="payment">
+    <h2>Payment Type:</h2>
+    <select name="payment_type" id="payment_type" class="type_payment" required>
+      <option selected>choose type of pay</option>
+      <option value="VISA">VISA</option>
+      <option value="MASTER CARD">MASTER CARD</option>
+      <option value="MEZZA">MEZZA</option>
+      <option value="INSTAPAY">INSTAPAY</option>
+    </select>
+  </div>
+    <div>
+      <img
+        src="{% static '_3galty/img/checkout.png'%}"
+        alt="checkout"
+        class="photo"
+      />
+    </div>
+    <div class="container1">
+      <h1
+        style="float: right; margin-top: 5%; margin-right: 9%; font-size: 60px"
+      >
+        Thank You
+      </h1>
+      <div style="width: 63%; margin-top: 14%; margin-left: 32%">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut
+          dictum nulla. Maecenas pulvinar euismod purus, et tincidunt est
+          venenatis ac. Vivamus eget justo non lorem cursus venenatis.
+          Vestibulum nec bibendum mi. Praesent aliquam ipsum in diam faucibus,
+          in pulvinar nisi consequat. Nam nec elit vulputate, tempus purus eu,
+          vestibulum mi.
+        </p>
+      </div>
+
+      {% if checkout_data %}
+      <div>
+        <h1 style="margin-left: 50%; margin-top: 10%">Duration & Price</h1>
+        <div>
+          <h1 class="time">
+            {{ checkout_data.days }} : {{ checkout_data.hours }} : {{ checkout_data.minutes }} : {{ checkout_data.seconds }}
+          </h1>
+        </div>
+        <div class="time-info">
+          <h5>Days</h5>
+          <h5>Hours</h5>
+          <h5>Minutes</h5>
+          <h5>Seconds</h5>
+        </div>
+        <h1 style="margin-left: 55%; margin-top: 50px; font-size: 40px">
+          ${{ checkout_data.total_price }}
+        </h1>
+      </div>
+      {% endif %}
+
+  <button type="submit" class="btn">Checkout</button>
+</form>      
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="{% url 'AboutUs' %}">about us</a></li>
+              <li><a href="{% url 'PrivacyPolicy' %}">privacy policy</a></li>
+              <li><a href="{% url 'TermsOfService' %}">terms of service</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>our services</h4>
+            <ul>
+              <li><a href="{% url 'StartRide' %}">start ride</a></li>
+              <li><a href="{% url 'EndRide' %}">end ride</a></li>
+              <li>
+                <a href="{% url 'SearchByStations' %}">search by station</a>
+              </li>
+              <li><a href="{% url 'reviews' %}">reveiw</a></li>
+              <li><a href="{% url 'premium' %}">3galty +</a></li>
+              <li><a href="{% url 'checkout' %}">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="{% url 'fga' %}">FAQ</a></li>
+              <li><a href="{% url 'HowItWork' %}">watch video</a></li>
+              <li><a href="#">blog</a></li>
+              <li><a href="{% url 'HowItWork' %}">how it work</a></li>
+              <li><a href="{% url 'contact' %}">contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Rating</h4>
+            <div class="ReveiwRate"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-container">
+        <hr class="separator" />
+        <div>
+          <a href="{% url 'home' %}"
+            ><img
+              class="FooterLogo"
+              src="{% static '_3galty/img/Web Logo.png'%}"
+              alt="Bicycle Logo"
+              sizes=""
+              srcset=""
+          /></a>
+        </div>
+
+        <ul class="social-icons">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-telegram"></i></a>
+          </li>
+        </ul>
+
+        <div>
+          <a class="Privacy_Terms" href="{% url 'TermsOfService' %}"
+            >Terms of Service</a
+          >
+          <a class="Privacy_Terms" href="{% url 'PrivacyPolicy' %}"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+
+      <p>
+        &copy;© 2024 All rights reserved by 3galty.com | Designed & Developed
+        made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+        <a
+          class="TeamName"
+          href="https://github.com/a7mednazeer"
+          target="_blank"
+          >Ahmed Nazeer</a
+        >
+        &
+        <a class="TeamName" href="https://github.com/JANASAKR" target="_blank"
+          >Jana Sakr</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
